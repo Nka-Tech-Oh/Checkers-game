@@ -1,0 +1,221 @@
+html, body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF; /* Changed text color to white for better contrast */
+    font-family: "Lato", Calibri, sans-serif;
+    font-size: 16px;
+    background-color: #1E1E2F; /* Darker background for a sleek look */
+  }
+  
+  html h1, body h1 {
+    margin-top: 10px;
+    color: #E1E1E1; /* Light color for headers */
+  }
+  
+  html h2, body h2 {
+    font-size: 1.3em;
+    color: #F1C40F; /* Bright yellow for H2 headers */
+  }
+  
+  html h3, body h3 {
+    font-size: 1.1em;
+    color: #F39C12; /* Orange color for H3 headers */
+  }
+  
+  html a, body a {
+    text-decoration: none;
+    color: #F1C40F; /* Bright yellow for links */
+    font-weight: 700;
+  }
+  
+  html a:hover, body a:hover {
+    text-decoration: underline;
+  }
+  
+  html hr, body hr {
+    border: 0;
+    height: 1px;
+    background-color: #444;
+    background-image: linear-gradient(to right, #444444, #ccc);
+  }
+  
+  html .clearfix, body .clearfix {
+    clear: both;
+  }
+  
+  div.column {
+    position: relative;
+    float: left;
+    overflow: auto;
+    height: 100%;
+    min-height: 100%;
+    width: 50%;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    div.column {
+      width: 100% !important;
+      overflow: hidden;
+      height: auto;
+    }
+  }
+  
+  div.info, div.stats {
+    width: 70%;
+    margin: 13vmin auto 0;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    background-color: #2C3E50; /* Dark blue-grey for sections */
+    color: #ECF0F1; /* Light gray text */
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Softer shadow */
+  }
+  
+  div.stats {
+    margin: 50px auto !important;
+  }
+  
+  div.stats .wrapper {
+    display: flex;
+  }
+  
+  div.stats #player1 {
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    background-color: #E74C3C; /* Red for Player 1 */
+    box-sizing: border-box;
+    padding: 0 15px 20px;
+    border-top-left-radius: 8px;
+    color: #FFFFFF; /* White text */
+  }
+  
+  div.stats #player1 .capturedPiece {
+    width: 2.4vmin;
+    height: 2.4vmin;
+    background-color: #FFFFFF; /* White for captured pieces */
+    border-radius: 6vmin;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    margin: 5px;
+  }
+  
+  div.stats #player2 {
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    background-color: #34495E; /* Dark blue for Player 2 */
+    box-sizing: border-box;
+    padding: 0 15px 20px;
+    border-top-right-radius: 8px;
+    color: #ECF0F1; /* Light gray text */
+  }
+  
+  div.stats #player2 .capturedPiece {
+    width: 2.4vmin;
+    height: 2.4vmin;
+    background-color: #E74C3C; /* Red for captured pieces */
+    border-radius: 6vmin;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    margin: 5px;
+  }
+  
+  div.stats div.turn {
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(to right, #F1C40F 50%, transparent 50%);
+    border-radius: 0 0 8px 8px; /* Slightly larger radius */
+  }
+  
+  div.stats span#winner {
+    display: block;
+    padding: 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  div.stats button#cleargame {
+    display: block;
+    border: 0;
+    color: #F1F1F1;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto 10px;
+    padding: 10px;
+    background-color: #2980B9; /* Blue button */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.15s linear;
+  }
+  
+  div.stats button#cleargame:hover {
+    background-color: #1A5276; /* Darker blue on hover */
+  }
+  
+  div#board {
+    position: absolute;
+    top: calc(50% - 40vmin);
+    left: calc(50% - 40vmin);
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    background-color: #E74C3C; /* Bright red board */
+    overflow: hidden;
+  }
+  
+  div#board .tile {
+    width: 10vmin;
+    height: 10vmin;
+    position: absolute;
+    background-color: #34495E; /* Dark tile color */
+  }
+  
+  div#board .player1pieces .piece {
+    position: absolute;
+    width: 8vmin;
+    height: 8vmin;
+    background-color: #F1C40F; /* Bright yellow for Player 1 pieces */
+    border-radius: 6vmin;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+    cursor: pointer;
+    border: 1vmin solid #E74C3C; /* Red border for Player 1 pieces */
+  }
+  
+  div#board .player1pieces .piece.selected {
+    box-shadow: 0 0 10px 5px #F39C12; /* Orange glow for selected */
+  }
+  
+  div#board .player2pieces .piece {
+    position: absolute;
+    width: 8vmin;
+    height: 8vmin;
+    background-color: #2ECC71; /* Green for Player 2 pieces */
+    border-radius: 6vmin;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+    cursor: pointer;
+    border: 1vmin solid #34495E; /* Dark border for Player 2 pieces */
+  }
+  
+  div#board .player2pieces .piece.selected {
+    box-shadow: 0 0 10px 5px #16A8C7; /* Teal glow for selected */
+  }
+  
+  /*# sourceMappingURL=style.css.map */

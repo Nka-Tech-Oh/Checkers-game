@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Checkers Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="column">
+        <div class="info">
+            <h1>My Checkers Game</h1>
+            <hr>
+            <p>Created by Nkateko.</p>
+        </div>
+        <div class="stats">
+            <h2>Game Statistics</h2>
+            <div class="wrapper">
+                <div id="player1">
+                    <h3>Player 1 (Nkateko)</h3>
+                </div>
+                <div id="player2">
+                    <h3>Player 2 (Opponent's Name)</h3>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="turn"></div>
+            <span id="winner"></span>
+            <button id="cleargame">Start Over</button>
+        </div>
+    </div>
+    <div class="column">
+        <div id="board"></div>
+    </div>
+    <audio id="moveSound" src="path/to/move-sound.mp3" preload="auto"></audio>
+    <audio id="captureSound" src="path/to/capture-sound.mp3" preload="auto"></audio>
+</body>
+</html>
